@@ -24,8 +24,7 @@ const resolvers = {
             const name = args.name; 
             const movie = _.find(MovieList, { name });
             return movie;
-        }
-        
+        }     
     }, 
     User : {
         favouriteMovies : () => {
@@ -35,7 +34,19 @@ const resolvers = {
                 movie.yearOfPublication >= 2000 && movie.yearOfPublication <= 2010
             );
         }
+    }, 
+
+    Mutation :  {
+        createUser: (parent, args) => {
+            const user = args.input
+            // console.log(user); 
+            const lastId = UserList[UserList.length-1].id
+            user.id = lastId + 1;
+            UserList.push(user); 
+            return user;
+        }
     }
 }
 
-module.exports = {resolvers};
+module.exports = { resolvers 
+};

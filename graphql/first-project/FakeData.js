@@ -78,7 +78,7 @@ const MovieList = [
         "id" : 3, 
         "name" : "Superhad", 
         yearOfPublication: 2009, 
-        isInTheaters : true, 
+        isInTheaters : true,
     }, 
     {
         "id" : 4, 
